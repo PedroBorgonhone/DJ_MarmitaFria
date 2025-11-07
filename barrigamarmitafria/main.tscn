@@ -1,15 +1,36 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpkx1wv2g6px4"]
+[gd_scene load_steps=5 format=3 uid="uid://cpkx1wv2g6px4"]
 
 [ext_resource type="PackedScene" uid="uid://drtjpkw8hybha" path="res://barriga.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://cj8yuby2v5eva" path="res://cone.tscn" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://du4qtg267jrk6" path="res://hud.gd" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://clp1cu46i0bwi" path="res://DestinoEntrega.tscn" id="4_1bvp3"]
 
-[node name="Node2D" type="Node2D"]
+[node name="main" type="Node2D"]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_0xm2m")]
-position = Vector2(583, 231)
+[node name="barriga" parent="." instance=ExtResource("1_0xm2m")]
+position = Vector2(297, 258)
 
-[node name="StaticBody2D" parent="." instance=ExtResource("2_h2yge")]
-position = Vector2(1026, 232)
+[node name="cone" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(588, 266)
 
-[node name="StaticBody2D2" parent="." instance=ExtResource("2_h2yge")]
-position = Vector2(238, 208)
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("3_h2yge")
+
+[node name="Label" type="Label" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -81.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "Tempo: 60"
+
+[node name="Timer" type="Timer" parent="HUD"]
+process_callback = 0
+wait_time = 60.0
+one_shot = true
+
+[node name="destino_entrega" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(825, 269)
+
+[connection signal="timeout" from="HUD/Timer" to="HUD" method="_on_timer_timeout"]

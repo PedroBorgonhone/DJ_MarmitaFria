@@ -11,6 +11,6 @@ config_version=5
 [application]
 
 config/name="BarrigaMarmitaFria"
-run/main_scene="uid://cpkx1wv2g6px4"
+run/main_scene="uid://crg5vs8nqvwbj"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
