@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpkx1wv2g6px4"]
+
+[ext_resource type="PackedScene" uid="uid://drtjpkw8hybha" path="res://barriga.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cj8yuby2v5eva" path="res://cone.tscn" id="2_h2yge"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_0xm2m")]
+position = Vector2(583, 231)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(1026, 232)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(238, 208)
