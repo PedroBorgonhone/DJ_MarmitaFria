@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpkx1wv2g6px4"]
+
+[ext_resource type="PackedScene" uid="uid://drtjpkw8hybha" path="res://Cenas/barriga_moto.tscn" id="1_lb8y5"]
+[ext_resource type="PackedScene" uid="uid://cj8yuby2v5eva" path="res://Cenas/cone.tscn" id="2_ja1os"]
+[ext_resource type="Script" uid="uid://du4qtg267jrk6" path="res://Script/hud.gd" id="3_qns0q"]
+[ext_resource type="PackedScene" uid="uid://clp1cu46i0bwi" path="res://Cenas/DestinoEntrega.tscn" id="4_n00j1"]
+
+[node name="main" type="Node2D"]
+
+[node name="barriga" parent="." instance=ExtResource("1_lb8y5")]
+position = Vector2(297, 258)
+
+[node name="cone" parent="." instance=ExtResource("2_ja1os")]
+position = Vector2(588, 266)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("3_qns0q")
+
+[node name="Label" type="Label" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -81.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "Tempo: 60"
+
+[node name="Timer" type="Timer" parent="HUD"]
+process_callback = 0
+wait_time = 60.0
+one_shot = true
+
+[node name="destino_entrega" parent="." instance=ExtResource("4_n00j1")]
+position = Vector2(825, 269)
+
+[connection signal="timeout" from="HUD/Timer" to="HUD" method="_on_timer_timeout"]

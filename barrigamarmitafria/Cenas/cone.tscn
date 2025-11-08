@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj8yuby2v5eva"]
+
+[ext_resource type="Script" uid="uid://b65l2sn3uwl6s" path="res://Cenas/cone.gd" id="1_lhofx"]
+[ext_resource type="Texture2D" uid="uid://bvamt0y1s8svb" path="res://icon.svg" id="1_u0elp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvldi"]
+size = Vector2(116, 119)
+
+[node name="Cone" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_lhofx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_gvldi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4, 2)
+texture = ExtResource("1_u0elp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

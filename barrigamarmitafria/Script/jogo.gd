@@ -1,8 +1,8 @@
 extends Node
 
 const FASE_FACIL = preload("res://main.tscn")
-# const FASE_MEDIA = preload("res://Fase_Media.tscn") # Crie este arquivo depois
-# const FASE_DIFICIL = preload("res://Fase_Dificil.tscn") # Crie este arquivo depois
+# const FASE_MEDIA = preload("res://Fase_Media.tscn")
+# const FASE_DIFICIL = preload("res://Fase_Dificil.tscn")
 
 # Array com as cenas das fases (em ordem)
 const FASES = [FASE_FACIL] # Adicione FASE_MEDIA e FASE_DIFICIL aqui

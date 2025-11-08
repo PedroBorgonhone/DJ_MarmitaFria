@@ -1,18 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://clp1cu46i0bwi"]
 
-[ext_resource type="Script" uid="uid://brmp3px0mkoag" path="res://destino_entrega.gd" id="1_q23d2"]
-[ext_resource type="Texture2D" uid="uid://bvamt0y1s8svb" path="res://icon.svg" id="2_48bky"]
+[ext_resource type="Script" uid="uid://brmp3px0mkoag" path="res://Script/destino_entrega.gd" id="1_cdc00"]
+[ext_resource type="Texture2D" uid="uid://bvamt0y1s8svb" path="res://icon.svg" id="2_clm67"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yafks"]
 size = Vector2(55, 301)
 
 [node name="DestinoEntrega" type="Area2D"]
-script = ExtResource("1_q23d2")
+script = ExtResource("1_cdc00")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, 0)
 scale = Vector2(0.453125, 2.35156)
-texture = ExtResource("2_48bky")
+texture = ExtResource("2_clm67")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, -0.5)

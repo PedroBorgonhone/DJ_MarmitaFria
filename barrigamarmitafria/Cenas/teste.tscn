@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbkkperrku5to"]
+
+[ext_resource type="PackedScene" uid="uid://drtjpkw8hybha" path="res://Cenas/barriga_moto.tscn" id="1_ssles"]
+[ext_resource type="PackedScene" uid="uid://cj8yuby2v5eva" path="res://Cenas/cone.tscn" id="2_4uk6u"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4uk6u"]
+distance = -150.0
+
+[node name="Teste" type="Node2D"]
+
+[node name="Barriga_Moto" parent="." instance=ExtResource("1_ssles")]
+position = Vector2(131, 250)
+acceleration = 0.5
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(562, 436)
+shape = SubResource("WorldBoundaryShape2D_4uk6u")
+
+[node name="Cone" parent="." instance=ExtResource("2_4uk6u")]
+position = Vector2(834, 306)
